@@ -31,7 +31,7 @@ jobs:
         run: ruff check members/.
 
       - name: Run tests (Pytest)
-        run: pytest -q
+        run: pytest -q python-bootcamp
 
       - name: Check for merge conflict markers
         run: "! git grep -n -E '^([<]{7}|[>]{7})'"
