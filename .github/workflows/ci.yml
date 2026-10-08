@@ -28,10 +28,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run linter (Ruff)
-        run: ruff check .
+        run: ruff check python-bootcamp
 
       - name: Run tests (Pytest)
-        run: pytest -q
+        run: pytest -q python-bootcamp
 
       - name: Check for merge conflict markers
         run: "! git grep -n -E '^([<]{7}|[>]{7})'"
