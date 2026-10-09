@@ -2,13 +2,13 @@ def summary(scores):
     if not scores:
         raise ValueError("the scores list is empty")
     else:
-        min = 100
-        max = 0
+        min_val = 100
+        max_val = 0
         median = 0
         mean = 0
         for score in scores:
-            min = min(score, min)
-            max = max(score, max)
+            min_val = min(score, float(min_val))
+            max_val = max(score, float(max_val))
             mean = mean + score
         mean = mean / len(scores)
         scores.sort()
@@ -19,5 +19,5 @@ def summary(scores):
             median = scores[n//2]
         mean = round(mean, 2)
         median = round(median, 2)
-        res = {'min': min, 'max': max, 'mean': mean, 'median': median}
+        res = {'min': min_val, 'max': max_val, 'mean': mean, 'median': median}
         return res
