@@ -7,7 +7,7 @@ def summary(scores: list[float]) -> dict:
     else:
         min_val= min(scores)
         max_val=max(scores)
-        mean_val=sum(scores)/len(scores)
+        mean_val=round(sum(scores)/len(scores),2)
         median_val=statistics.median(scores)
         return {
         "min": min_val,
