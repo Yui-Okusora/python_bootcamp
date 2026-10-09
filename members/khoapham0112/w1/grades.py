@@ -7,10 +7,8 @@ def summary(scores):
         median = 0
         mean = 0
         for score in scores:
-            if score < min:
-                min = score
-            if score > max:
-                max = score
+            min = min(score, min)
+            max = max(score, max)
             mean = mean + score
         mean = mean / len(scores)
         scores.sort()
