@@ -1,4 +1,6 @@
 import statistics
+
+
 def summary(scores: list[float]) -> dict:
     min_val, max_val = min(scores), max(scores)
     mean_val=sum(scores)/len(scores)

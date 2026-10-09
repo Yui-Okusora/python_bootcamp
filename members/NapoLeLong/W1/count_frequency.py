@@ -1,10 +1,10 @@
 def count_frequency(vector):
-    freq = {}
+    frequency = {}
 
     for element in vector:
-        if element in freq:
-            freq[element] += 1
+        if element in frequency:
+            frequency[element] += 1
         else:
-            freq[element] = 1
+            frequency[element] = 1
 
-    return freq
+    return frequency
