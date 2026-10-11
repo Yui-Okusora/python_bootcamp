@@ -8,14 +8,18 @@ def summary(scores: list[float]) -> dict:
     n = len(scores)
     mean = sum(scores) / n
     
-    if n % 2 == 0:
-        median = (scores[n//2 - 1] + scores[n//2]) / 2
+    sorted_scores = sorted(scores)
+    
+    if n % 2 != 0:
+        median = sorted_scores[n // 2]
     else:
-        median = scores[n//2]
+        mid1 = (n // 2) - 1
+        mid2 = n // 2
+        median = (sorted_scores[mid1] + sorted_scores[mid2]) / 2
     
     return {
         "min": min_val,
         "max": max_val,
         "mean": round(mean, 2),
-        "meadian": round(median, 2)
+        "median": round(median, 2)
     }
