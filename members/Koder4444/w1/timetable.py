@@ -1,8 +1,11 @@
-def by_day(courses):
-    result = {}
+def by_day(courses :  list[tuple[str, str]]) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+    
     for course, day in courses:
-        result.setdefault(day, []).append(course)
+        if day not in result:
+            result[day] = []
+        result[day].append(course)
         
-    for day, value in result.items():
+    for day in result:
         result[day].sort()
     return result
