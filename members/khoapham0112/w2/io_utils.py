@@ -1,0 +1,44 @@
+import csv
+import json
+import datetime
+from dataclasses import dataclass, asdict
+
+@dataclass
+class Task:
+    title: str
+    importance: int
+    effort_h: float
+    deadline: datetime.date
+   
+    def __post_init__(self):
+        if not 1 <= self.importance <= 5:
+            raise ValueError("importance must be 1-5")
+
+def load_tasks(path: str) -> list[Task]:
+    tasks = []
+    with open(path, mode='r', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        header = next(reader, None)
+
+        for line_num, row in enumerate(reader, start=2):
+            title_val = row[0].strip()
+            try:
+                importance_val = int(row[1].strip())
+                effort_val = float(row[2].strip())
+                deadline_val = datetime.date.fromisoformat(row[3].strip())
+                task = Task(title_val, importance_val, effort_val, deadline_val)
+                tasks.append(task)
+            except Exception as e:
+                raise ValueError(f"Invalid data at line {line_num}: {e}")
+                
+    return tasks
+
+def save_json(tasks: list[Task], path: str):
+    data = []
+    for task in tasks:
+        task_dict = asdict(task)
+        task_dict['deadline'] = task.deadline.isoformat()
+        data.append(task_dict)
+        
+    with open(path, mode='w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)

@@ -16,6 +16,3 @@ class Task:
        if(diff.days < 0):
            return 0
        return diff.days
-
-t = Task("DS exam", 9, 6.0, datetime.date(2026, 10, 30))
-print(t.days_left(datetime.date(2026, 11, 26))) 
