@@ -14,6 +14,6 @@ class Task:
             raise ValueError("importance must be 1-5")
    def days_left(self, today: datetime.date):
        diff = self.deadline - today
-       if(diff.days < 0):
+       if(diff.days <= 0):
            return 0
        return diff.days

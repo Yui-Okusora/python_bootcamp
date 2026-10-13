@@ -1,14 +1,6 @@
-import os
-import sys
-
-thu_muc_cha = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..")
-)
-
-sys.path.insert(0, thu_muc_cha)
 import datetime
 
-from contract import Task
+from shared.contract import Task
 
 
 def days_left(task, today: datetime.date):
