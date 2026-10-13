@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from datetime import date
 
-
 @dataclass
 class Task:
  title: str
@@ -13,4 +12,3 @@ class Task:
 class Block:
  task: Task
  hours: float
-
