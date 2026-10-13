@@ -1,7 +1,8 @@
 import csv
-import json
 import datetime
-from dataclasses import dataclass, asdict
+import json
+from dataclasses import asdict, dataclass
+
 
 @dataclass
 class Task:
@@ -19,7 +20,7 @@ def load_tasks(path: str) -> list[Task]:
     with open(path, mode='r', encoding='utf-8') as f:
         reader = csv.reader(f)
         header = next(reader, None)
-
+        print(header)
         for line_num, row in enumerate(reader, start=2):
             title_val = row[0].strip()
             try:
@@ -28,7 +29,7 @@ def load_tasks(path: str) -> list[Task]:
                 deadline_val = datetime.date.fromisoformat(row[3].strip())
                 task = Task(title_val, importance_val, effort_val, deadline_val)
                 tasks.append(task)
-            except Exception as e:
+            except (FileNotFoundError, ValueError, OSError) as e:
                 raise ValueError(f"Invalid data at line {line_num}: {e}")
                 
     return tasks
