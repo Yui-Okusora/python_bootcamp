@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from .io_utils import load_tasks
 
 
@@ -11,7 +12,7 @@ def main():
         print(f"Loaded {len(tasks)} tasks:\n")
         for task in tasks:
             print(task)
-    except Exception as e:
+    except Exception as e: # noqa: BLE001
         print(f"Error loading tasks: {e}")
 
 
