@@ -3,18 +3,16 @@ from .io_utils import load_tasks
 
 
 def main():
-    current_dir = Path(__file__).parent
-    csv_path = current_dir / "tasks.csv"
+    project_root = Path(__file__).resolve().parent.parent.parent.parent
+    csv_path = project_root / "samples" / "tasks.csv"
 
     try:
         tasks = load_tasks(str(csv_path))
-
-        print(f"=== ĐÃ TẢI {len(tasks)} TASK TỪ CSV ===")
+        print(f"Loaded {len(tasks)} tasks:\n")
         for task in tasks:
             print(task)
-
     except Exception as e:
-        print(f"Lỗi khi tải file CSV: {e}")
+        print(f"Error loading tasks: {e}")
 
 
 if __name__ == "__main__":
