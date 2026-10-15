@@ -2,7 +2,9 @@ import csv
 import json
 from dataclasses import asdict
 from datetime import date
+
 from .models import Task
+
 
 def load_tasks(path: str) -> list[Task]:
     tasks = []
