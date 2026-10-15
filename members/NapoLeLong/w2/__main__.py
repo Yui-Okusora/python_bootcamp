@@ -1,5 +1,7 @@
 from pathlib import Path
+
 from .io_utils import load_tasks
+
 
 def main():
     csv_path = Path(__file__).resolve().parents[3] / "samples" / "tasks.csv"

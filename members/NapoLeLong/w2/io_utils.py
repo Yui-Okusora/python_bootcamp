@@ -1,7 +1,9 @@
 import csv
 import json
 from datetime import date
+
 from .models import Task
+
 
 def load_tasks(path: str) -> list[Task]:
     tasks = []
@@ -9,15 +11,18 @@ def load_tasks(path: str) -> list[Task]:
         reader = csv.reader(f)
         header = next(reader, None) 
         if not header:
-            return tasks        
+            return tasks
+        
         for line_num, row in enumerate(reader, start=2):
             try:
                 if len(row) < 4:
                     raise ValueError("Missing columns")
+                
                 title = row[0].strip()
                 importance = int(row[1].strip())
                 effort_h = float(row[2].strip())
                 deadline = date.fromisoformat(row[3].strip())
+                
                 task = Task(
                     title=title, 
                     importance=importance, 
@@ -25,9 +30,11 @@ def load_tasks(path: str) -> list[Task]:
                     deadline=deadline
                 )
                 tasks.append(task)
-            except Exception as e:
-                raise ValueError(f"Error at line {line_num}: {e}")                
+            except ValueError as e:
+                raise ValueError(f"Error at line {line_num}: {e}")
+                
     return tasks
+
 def save_json(tasks: list[Task], path: str):
     data = []
     for t in tasks:
