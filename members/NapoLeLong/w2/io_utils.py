@@ -13,7 +13,7 @@ def load_tasks(path: str) -> list[Task]:
         for line_num, row in enumerate(reader, start=2):
             try:
                 if len(row) < 4:
-                    raise ValueError("Missing data column")
+                    raise ValueError("Missing columns")
                 title = row[0].strip()
                 importance = int(row[1].strip())
                 effort_h = float(row[2].strip())
@@ -26,7 +26,7 @@ def load_tasks(path: str) -> list[Task]:
                 )
                 tasks.append(task)
             except Exception as e:
-                raise ValueError(f"Error line {line_num}: {e}")                
+                raise ValueError(f"Error at line {line_num}: {e}")                
     return tasks
 def save_json(tasks: list[Task], path: str):
     data = []
