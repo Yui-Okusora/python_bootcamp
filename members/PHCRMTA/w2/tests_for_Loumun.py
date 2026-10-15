@@ -1,5 +1,4 @@
-import pytest
-
+# noqa: N999
 from members.Loumun.w1.remove_dupp import remove_Dupp
 
 
