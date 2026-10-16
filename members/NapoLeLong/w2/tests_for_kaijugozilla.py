@@ -1,5 +1,5 @@
-import pytest
 from kaijugozilla.W1.translate import merge_sorted_lists
+
 
 def test_merge_standard():
     assert merge_sorted_lists([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6]
