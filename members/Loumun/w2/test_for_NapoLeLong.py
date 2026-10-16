@@ -2,6 +2,7 @@ import pytest
 
 from members.NapoLeLong.W1.count_frequency import count_frequency
 
+
 @pytest.mark.parametrize(
     "input_vector, expected",
     [
