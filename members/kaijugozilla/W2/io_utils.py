@@ -5,6 +5,7 @@ from pathlib import Path
 
 from .models import Task
 
+
 def load_tasks(path: str | Path) -> list[Task]:
     tasks = []
 
