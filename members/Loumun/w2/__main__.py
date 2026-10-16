@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from .io_utils import load_tasks
 
 
@@ -14,7 +15,7 @@ def main():
         print(f"--- Loaded {len(tasks)} tasks ---")
         for task in tasks:
             print(task)
-    except Exception as e:
+    except OSError as e:
         print(f"error: failed to read CSV file {csv_path.name}: {e}")
 
 
