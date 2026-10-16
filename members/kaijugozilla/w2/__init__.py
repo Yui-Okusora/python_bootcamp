@@ -1,5 +1,3 @@
-# ruff: noqa: N999
-
 from .errors import InfeasiblePlan, check_feasible
 from .io_utils import load_tasks, save_json
 from .models import Task
