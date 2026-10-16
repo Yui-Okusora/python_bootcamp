@@ -1,3 +1,4 @@
+# ruff: noqa: N999
 import pytest
 
 from members.NapoLeLong.W1.count_frequency import count_frequency
