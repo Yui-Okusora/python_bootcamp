@@ -5,6 +5,7 @@ import pytest
 from shared.contract import Block, Task
 from shared.study_planner.render import render
 
+
 def make_task(title: str) -> Task:
     return Task(title, 4, 2.0, date(2026, 10, 30))
 

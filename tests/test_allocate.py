@@ -1,4 +1,5 @@
 from datetime import date
+
 from shared.contract import Block, Task
 from shared.study_planner.allocate import allocate
 

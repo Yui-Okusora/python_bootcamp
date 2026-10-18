@@ -1,5 +1,6 @@
 from shared.contract import Block
 
+
 def render(blocks: list[Block]) -> str:
     """Turn a list of study blocks into a readable plan."""
     if not blocks:
