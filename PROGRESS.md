@@ -7,3 +7,13 @@
 | Koder4444   | w1   | #23   | #25  | khoapham0112 |  5/5  | 4     |
 | kaijugozilla | w1   | #26   | #22  | khoapham0112          |  5/5  | 3     |
 | Loumun           | w1   | #21   | #18  | khoapham0112           |  5/5  | 5    |
+
+| Member          | Week | Issue | PR   | Reviewer        | Tests | Hours |
+|-----------------|------|-------|------|-----------------|-------|-------|
+| khoapham0112           | w2   | #31   | #32  | Koder4444        |  3/3  | 3   |
+| PHCRMTA        | w2   | #34   | #35  | khoapham0112   |  3/3  | 3   |
+| NapoLeLong   | w2   | #36   | #38  | PHCRMTA         |  3/3  | 3     |
+| Yui-Okusora         | w2   | #46   | #48  | NapoLeLong   |  3/3  | 3   |
+| Koder4444   | w2   | #44   | #47  | Yui-Okusora |  3/3  | 3     |
+| kaijugozilla | w2   | #43   | #52  | Yui-Okusora          |  3/3  | 3     |
+| Loumun           | w2   | #39   | #41  | kaijugozilla           |  3/3  | 3    |
