@@ -1,7 +1,6 @@
 
 import argparse
 from datetime import date
-import sys
 
 from shared.study_planner.allocate import allocate
 from shared.study_planner.parse import parse_csv
@@ -38,17 +37,8 @@ def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
 
-    try:
-        tasks = parse_csv(args.path)
-    except FileNotFoundError:
-        print(
-            f"Error: Missing file '{args.path}'. Please check the path.",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-    except Exception as e:
-        print(f"Error reading file '{args.path}': {e}", file=sys.stderr)
-        sys.exit(1)
+
+    tasks = parse_csv(args.path)
 
     sorted_tasks = prioritise(tasks, args.today)
 

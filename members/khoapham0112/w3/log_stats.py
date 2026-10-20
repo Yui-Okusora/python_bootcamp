@@ -1,5 +1,5 @@
-from collections import Counter, defaultdict
 import math
+from collections import Counter, defaultdict
 
 """
 Given a list of route. Return requests per route (Counter), p95 latency per route, and the route

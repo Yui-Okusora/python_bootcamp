@@ -1,5 +1,5 @@
-from datetime import date, timedelta
 import re
+from datetime import date, timedelta
 
 """return an exact date from the input date"""
 def parse_due(text: str, today: date) -> date:
