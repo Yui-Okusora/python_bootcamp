@@ -1,10 +1,11 @@
 import argparse
 import sys
 from datetime import date
+
+from members.khoapham0112.w2.io_utils import load_tasks
 from shared.study_planner.allocate import allocate
 from shared.study_planner.prioritise import prioritise
 from shared.study_planner.render import render
-from members.khoapham0112.w2.io_utils import load_tasks
 
 """write command-line tool for the w2 folder"""
 def main() -> None:
@@ -35,7 +36,7 @@ def main() -> None:
             file=sys.stderr,
         )
         sys.exit(1)
-    except Exception as e:
+    except ValueError as e:
         print(f"Lỗi dữ liệu file: {e}", file=sys.stderr)
         sys.exit(1)
 
