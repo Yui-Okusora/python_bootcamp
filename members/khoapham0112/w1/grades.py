@@ -1,4 +1,5 @@
-def summary(scores):
+"""Given a list of score, return max, min, mean and median of the list"""
+def summary(scores: list) -> dict:
     if not scores:
         raise ValueError("the scores list is empty")
     else:

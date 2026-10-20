@@ -1,4 +1,6 @@
-def by_day(courses):
+"""Given a list of courses and days. Return a calendar that the courses will be studied in each day."""
+
+def by_day(courses: list[tuple]) -> dict:
     res = {}
     for course in courses:
         day = course[1]

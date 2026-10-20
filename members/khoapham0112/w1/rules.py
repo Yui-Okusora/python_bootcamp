@@ -1,5 +1,7 @@
-def can_register_thesis(credits: int, gpa: float):
+"""return bool if credits >= 120 and gpa >= 2"""
+def can_register_thesis(credits: int, gpa: float) -> list[str]:
     return bool((credits >= 120) & (gpa >= 2))
+"""return message if with that gpa and credits can register thesis or not"""
 def missing(credits, gpa):
     if can_register_thesis(credits, gpa):
         return []

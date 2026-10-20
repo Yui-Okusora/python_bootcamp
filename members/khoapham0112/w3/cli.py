@@ -6,6 +6,7 @@ from shared.study_planner.prioritise import prioritise
 from shared.study_planner.render import render
 from members.khoapham0112.w2.io_utils import load_tasks
 
+"""write command-line tool for the w2 folder"""
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Lập kế hoạch học tập từ file CSV."

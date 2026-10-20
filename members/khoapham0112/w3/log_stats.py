@@ -1,7 +1,11 @@
 from collections import Counter, defaultdict
 import math
 
-def analyse(pairs) -> dict:
+"""
+Given a list of route. Return requests per route (Counter), p95 latency per route, and the route
+with the highest p95.
+"""
+def analyse(pairs: list[tuple]) -> dict:
     if not pairs:
         return {"counts": Counter(), "p95": {}, "slowest": None}
 
