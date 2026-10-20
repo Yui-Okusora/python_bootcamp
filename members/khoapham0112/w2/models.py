@@ -1,7 +1,7 @@
 import datetime
 from dataclasses import dataclass
 
-
+"""count days left between the deadline and today"""
 @dataclass
 class Task:
    title: str
@@ -12,7 +12,7 @@ class Task:
    def __post_init__(self):
         if not 1 <= self.importance <= 5:
             raise ValueError("importance must be 1-5")
-   def days_left(self, today: datetime.date):
+   def days_left(self, today: datetime.date) -> int:
        diff = self.deadline - today
        if(diff.days <= 0):
            return 0

@@ -4,7 +4,7 @@
  - Trong C++, việc tính mid dễ gây tràn số `int`, nên C++ dùng công thức an toàn: `low + (high - low) / 2`.
 """
 
-def binary_search(a, key):
+def binary_search(a: list, key: int) -> int:
     if a == []:
         return -1
     low = 0

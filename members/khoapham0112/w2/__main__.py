@@ -2,6 +2,7 @@ from pathlib import Path
 
 from .io_utils import load_tasks
 
+"""Turn the whole w2 folder into a package"""
 
 def main():
     sample_path = Path(__file__).resolve().parents[3] / "samples" / "tasks.csv"
