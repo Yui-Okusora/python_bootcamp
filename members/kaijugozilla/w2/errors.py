@@ -2,11 +2,10 @@ from .models import Task
 
 
 class InfeasiblePlan(Exception):
-    """Report when a study plan needs more hours than available."""
-    def __init__(
-        self, needed_h: float, available_h: float
-    ) -> None:
-         """Store the required and available hours."""
+    """Report when tasks need more hours than available."""
+
+    def __init__(self, needed_h: float, available_h: float) -> None:
+        """Store the required and available hours."""
         self.needed_h = needed_h
         self.available_h = available_h
         super().__init__(str(self))
@@ -18,8 +17,9 @@ class InfeasiblePlan(Exception):
             f"but only {self.available_h} hours are available."
         )
 
+
 def check_feasible(tasks: list[Task], available_h: float) -> None:
-    """Check whether there is enough time to finish all tasks."""
+    """Raise InfeasiblePlan when total task hours exceed available hours."""
     needed_h = sum(task.effort_h for task in tasks)
     if needed_h > available_h:
         raise InfeasiblePlan(needed_h, available_h)
