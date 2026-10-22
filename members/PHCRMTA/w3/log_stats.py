@@ -1,6 +1,7 @@
 import math
 from collections import Counter, defaultdict
 
+
 def analyse(pairs: list[tuple[str, float | int]]) -> dict:
     if not pairs:
         return {"counts": Counter(), "p55": {}, "p95": {}, "slowest": None}
