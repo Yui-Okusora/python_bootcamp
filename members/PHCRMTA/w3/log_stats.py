@@ -1,8 +1,10 @@
 import math
 from collections import Counter, defaultdict
+from typing import Any
 
 
-def analyse(pairs: list[tuple[str, float | int]]) -> dict:
+def analyse(pairs: list[tuple[str, float | int]]) -> dict[str, Any]:
+    """Analyse latency log pairs and return request counts, p95 latency, and the slowest route."""
     if not pairs:
         return {"counts": Counter(), "p55": {}, "p95": {}, "slowest": None}
 

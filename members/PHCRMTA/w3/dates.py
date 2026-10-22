@@ -1,13 +1,14 @@
 import re
 from datetime import date, timedelta
 
-WEEKDAYS = {
+WEEKDAYS: dict[str, int] = {
     "mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6,
     "monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3,
     "friday": 4, "saturday": 5, "sunday": 6
 }
 
 def parse_due(text: str, today: date) -> date:
+    """Parse a natural language date expression or ISO date string into a date object."""
     text_clean = text.strip().lower()
 
     # 1. ISO Format: "YYYY-MM-DD"

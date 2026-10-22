@@ -4,7 +4,8 @@ import sys
 from datetime import datetime
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for the task scheduler CLI."""
     parser = argparse.ArgumentParser(
         description="Command-line task scheduler CLI tool."
     )
@@ -30,7 +31,8 @@ def parse_args():
     return parser.parse_args()
 
 
-def main():
+def main() -> None:
+    """Execute the command-line task scheduler interface."""
     args = parse_args()
 
     try:
