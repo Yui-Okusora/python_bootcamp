@@ -34,7 +34,7 @@ def main():
     args = parse_args()
 
     try:
-        datetime.strptime(args.today, "%Y-%m-%d").date()
+        datetime.strptime(args.today, "%Y-%m-%d")
     except ValueError:
         print(
             f"Error: Invalid date format '{args.today}'. Expected YYYY-MM-DD.",
