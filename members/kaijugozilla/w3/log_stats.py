@@ -4,8 +4,7 @@ from math import ceil
 
 def analyse(pairs: list[tuple[str, float]]) -> dict:
     """Count requests and calculate p95 latency per route."""
-
-  counts = Counter()
+    counts = Counter()
     latencies = defaultdict(list)
 
     for route, latency_ms in pairs:
