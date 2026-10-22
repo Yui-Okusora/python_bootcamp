@@ -4,7 +4,7 @@ import argparse
 import sys
 from datetime import date
 
-from .io_utils import load_tasks
+from members.Loumun.w2.io_utils import load_tasks
 
 
 def main() -> None:
