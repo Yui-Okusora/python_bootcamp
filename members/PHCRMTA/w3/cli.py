@@ -4,28 +4,27 @@ import sys
 from datetime import datetime
 
 
-
 def parse_args():
     parser = argparse.ArgumentParser(
-        description="Công cụ dòng lệnh quản lý và lên lịch nhiệm vụ."
+        description="Command-line task scheduler CLI tool."
     )
 
     parser.add_argument(
-        "csv_file", type=str, help="Đường dẫn tới file CSV chứa danh sách công việc"
+        "csv_file", type=str, help="Path to the tasks CSV file"
     )
 
     parser.add_argument(
         "--hours",
         type=float,
         default=2.0,
-        help="Số giờ làm việc tối nay (mặc định: 2.0)",
+        help="Available hours for tonight (default: 2.0)",
     )
 
     parser.add_argument(
         "--today",
         type=str,
         default=datetime.now().strftime("%Y-%m-%d"),
-        help="Ngày tham chiếu định dạng YYYY-MM-DD (mặc định: hôm nay)",
+        help="Reference date in YYYY-MM-DD format (default: today)",
     )
 
     return parser.parse_args()
@@ -38,15 +37,17 @@ def main():
         today_date = datetime.strptime(args.today, "%Y-%m-%d").date()
     except ValueError:
         print(
-            f"Lỗi: Định dạng ngày '{args.today}' không hợp lệ. Vui lòng dùng YYYY-MM-DD.",
+            f"Error: Invalid date format '{args.today}'. Expected YYYY-MM-DD.",
             file=sys.stderr,
         )
         sys.exit(1)
 
     if not os.path.exists(args.csv_file):
-        print(f"Lỗi: Không tìm thấy file '{args.csv_file}'.", file=sys.stderr)
+        print(
+            f"Error: The specified file '{args.csv_file}' was not found.",
+            file=sys.stderr,
+        )
         sys.exit(1)
-
 
     tasks = [("Assignment", 1.5), ("DS exam", 0.5)]
 
