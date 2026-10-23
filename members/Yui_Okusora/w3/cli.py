@@ -1,12 +1,15 @@
+#ruff: noqa
+
 import argparse
+import sys
 from datetime import date
 from pathlib import Path
-import sys
 
-from ..w2.io_utils import load_tasks
 from shared.study_planner.allocate import allocate
 from shared.study_planner.prioritise import prioritise
 from shared.study_planner.render import render
+
+from ..w2.io_utils import load_tasks
 
 
 def main() -> None:
@@ -38,7 +41,7 @@ def main() -> None:
         output = render(allocated_plan)
         print(output)
 
-    except Exception as err:
+    except ValueError as err:
         print(f"Error processing plan: {err}", file=sys.stderr)
         sys.exit(1)
 

@@ -1,6 +1,7 @@
 import math
 from collections import Counter, defaultdict
 
+
 def analyse(pairs: list[tuple[str, float | int]]) -> dict:
     """Thống kê lượt request, p95 latency của từng route và tìm route chậm nhất."""
     if not pairs:
