@@ -6,6 +6,7 @@ from .models import Task
 
 
 def load_tasks(path: str) -> list[Task]:
+    """Đọc dữ liệu các công việc từ file CSV và trả về danh sách đối tượng Task."""
     tasks = []
     with open(path, mode='r') as f:
         reader = csv.reader(f)
@@ -35,7 +36,8 @@ def load_tasks(path: str) -> list[Task]:
                 
     return tasks
 
-def save_json(tasks: list[Task], path: str):
+def save_json(tasks: list[Task], path: str) -> None:
+    """Ghi danh sách đối tượng Task ra file cấu trúc JSON."""
     data = []
     for t in tasks:
         data.append({

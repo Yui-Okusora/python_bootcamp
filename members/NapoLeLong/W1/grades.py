@@ -2,6 +2,7 @@ import statistics
 
 
 def summary(scores: list[float]) -> dict:
+    """Tính các thông số thống kê cơ bản (min, max, mean, median) từ danh sách điểm số."""
     if not scores:
         raise ValueError("the scores list is empty")
     else:
