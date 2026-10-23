@@ -1,4 +1,5 @@
 def by_day(items: list[tuple[str, str]]) -> dict[str, list[str]]:
+    """Group courses by day and sort the courses alphabetically."""
     timetable = {}
 
     for course, day in items:
