@@ -1,4 +1,5 @@
-def count_frequency(vector):
+def count_frequency(vector: list) -> dict:
+    """Đếm số lần xuất hiện của từng phần tử trong một danh sách."""
     freq = {}
     for element in vector:
         if element in freq:
