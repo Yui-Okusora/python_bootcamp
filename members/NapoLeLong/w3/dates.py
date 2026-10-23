@@ -2,7 +2,7 @@ from datetime import date, timedelta
 import re
 
 def parse_due(text: str, today: date) -> date:
-    """Parse text into a date object based on the reference 'today'."""
+    """Chuyển đổi chuỗi văn bản mô tả ngày thành đối tượng ngày cụ thể dựa trên ngày mốc."""
     text = text.lower().strip()
     
     if text == "tomorrow":

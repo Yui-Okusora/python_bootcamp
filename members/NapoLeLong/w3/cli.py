@@ -9,6 +9,7 @@ from shared.study_planner.prioritise import prioritise
 from shared.study_planner.render import render
 
 def main() -> None:
+    """Chạy công cụ dòng lệnh (CLI) để lập kế hoạch học tập từ file CSV."""
     parser = argparse.ArgumentParser(description="Task CLI Planner")
 
     parser.add_argument("path", type=str, help="Đường dẫn tới file CSV chứa công việc")
