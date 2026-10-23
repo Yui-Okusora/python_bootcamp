@@ -23,7 +23,7 @@ def main() -> None:
     parser.add_argument(
         "--today",
         type=lambda s: date.fromisoformat(s),
-        default=datetime.now(UTC).date(),
+        default=datetime.UTC,
         help="Ngày hiện tại YYYY-MM-DD (mặc định: hôm nay)",
     )
 
