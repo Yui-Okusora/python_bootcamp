@@ -7,6 +7,7 @@ from .models import Task
 
 
 def load_tasks(path: str) -> list[Task]:
+    """Load tasks from a CSV file and return a list of Task objects."""
     tasks = []
 
     with open(path, mode="r", encoding="utf-8") as file:
@@ -36,6 +37,7 @@ def load_tasks(path: str) -> list[Task]:
 
 
 def save_json(tasks: list[Task], path: str) -> None:
+    """Save a list of Task objects into a JSON file."""
     task_list = []
     for task in tasks:
         task_dict = asdict(task)

@@ -3,7 +3,8 @@ from pathlib import Path
 from .io_utils import load_tasks
 
 
-def main():
+def main() -> None:
+    """Run the main entry point to load and display tasks."""
     project_root = Path(__file__).resolve().parent.parent.parent.parent
     csv_path = project_root / "samples" / "tasks.csv"
 
