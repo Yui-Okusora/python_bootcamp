@@ -1,4 +1,5 @@
 def word_count(text: str) -> dict[str, int]:
+    """Count the frequency of each word in text after removing punctuation and lowercasing."""
     punctuation = ".,!?:;"
     lowercased = text.lower()
 
@@ -23,6 +24,7 @@ def word_count(text: str) -> dict[str, int]:
 
 
 def top_k(text: str, k: int) -> list[tuple[str, int]]:
+    """Return the top k most frequent words sorted by frequency (descending) then alphabetically."""
     counts = word_count(text)
     items = list(counts.items())
 
