@@ -1,12 +1,13 @@
 import argparse
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from members.NapoLeLong.w2.io_utils import load_tasks
 from shared.study_planner.allocate import allocate
 from shared.study_planner.prioritise import prioritise
 from shared.study_planner.render import render
+
 
 def main() -> None:
     """Chạy công cụ dòng lệnh (CLI) để lập kế hoạch học tập từ file CSV."""
@@ -22,7 +23,7 @@ def main() -> None:
     parser.add_argument(
         "--today",
         type=lambda s: date.fromisoformat(s),
-        default=date.today(),
+        default=datetime.now(timezone.utc).date(),
         help="Ngày hiện tại YYYY-MM-DD (mặc định: hôm nay)",
     )
 

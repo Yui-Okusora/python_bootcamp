@@ -1,8 +1,9 @@
-from collections import Counter, defaultdict
 import math
-from typing import List, Tuple, Dict, Any
+from collections import Counter, defaultdict
+from typing import Any
 
-def analyse(pairs: List[Tuple[str, float]]) -> Dict[str, Any]:
+
+def analyse(pairs: list[tuple[str, float]]) -> dict[str, Any]:
     """Thống kê số lượng truy cập, tính p95 độ trễ và tìm route chậm nhất từ dữ liệu log."""
     counts = Counter()
     latencies = defaultdict(list)
