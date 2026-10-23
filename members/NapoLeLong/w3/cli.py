@@ -1,6 +1,6 @@
 import argparse
 import sys
-from datetime import date, datetime, UTC
+from datetime import date, datetime
 from pathlib import Path
 
 from members.NapoLeLong.w2.io_utils import load_tasks
