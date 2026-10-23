@@ -1,6 +1,6 @@
 import argparse
 import sys
-from datetime import date, datetime, timezone
+from datetime import date, datetime, UTC
 from pathlib import Path
 
 from members.NapoLeLong.w2.io_utils import load_tasks
@@ -23,7 +23,7 @@ def main() -> None:
     parser.add_argument(
         "--today",
         type=lambda s: date.fromisoformat(s),
-        default=datetime.now(timezone.utc).date(),
+        default=datetime.now(UTC).date(),
         help="Ngày hiện tại YYYY-MM-DD (mặc định: hôm nay)",
     )
 
