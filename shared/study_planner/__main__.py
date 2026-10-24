@@ -6,6 +6,7 @@ from shared.study_planner.allocate import allocate
 from shared.study_planner.parse import parse_csv
 from shared.study_planner.prioritise import prioritise
 from shared.study_planner.render import render
+from members.Koder4444.w2.errors import InfeasiblePlan, check_feasible
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -46,7 +47,9 @@ def main() -> None:
 
         sorted_tasks = prioritise(tasks, args.today)
         
-        # Hàm allocate sẽ tự động cắt/phân bổ các task vừa khít với số giờ --hours cho phép
+        # Kiểm tra tính khả thi bằng cách tái sử dụng check_feasible từ W2
+        check_feasible(sorted_tasks, args.hours)
+
         blocks = allocate(sorted_tasks, args.hours)
         plan_output = render(blocks)
         
@@ -55,6 +58,9 @@ def main() -> None:
 
     except FileNotFoundError:
         print(f"Error: Không tìm thấy file tại đường dẫn '{args.path}'.", file=sys.stderr)
+        sys.exit(1)
+    except InfeasiblePlan as e:
+        print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
     except ValueError as e:
         print(f"Error: {e}", file=sys.stderr)
