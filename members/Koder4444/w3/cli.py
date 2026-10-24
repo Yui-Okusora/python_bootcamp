@@ -7,6 +7,7 @@ from shared.study_planner.allocate import allocate
 from shared.study_planner.render import render
 
 def main() -> None:
+    """Run the study planner CLI to parse tasks, allocate hours, and print the schedule."""
     parser = argparse.ArgumentParser(
         description="Study planner command-line tool"
     )

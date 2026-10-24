@@ -3,6 +3,7 @@ import re
 
 
 def parse_due(text: str, today: date) -> date:
+    """Parse a date string (ISO format, relative days, or weekday) into a date object relative to today."""
     clean_text = text.strip().lower()
 
     try:

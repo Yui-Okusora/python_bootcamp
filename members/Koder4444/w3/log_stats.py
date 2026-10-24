@@ -3,6 +3,7 @@ import math
 
 
 def calculate_p95(latencies: list[float]) -> float:
+    """Calculate the 95th percentile latency from a list of latency values."""
     if not latencies:
         return 0.0
     sorted_latencies = sorted(latencies)
@@ -12,6 +13,7 @@ def calculate_p95(latencies: list[float]) -> float:
 
 
 def analyse(pairs: list[tuple[str, float]]) -> dict:
+    """Analyze route latencies to return counts, 95th percentiles, and the slowest route."""
     if not pairs:
         return {"counts": Counter(), "p95": {}, "slowest": None}
 

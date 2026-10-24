@@ -8,13 +8,15 @@ fixed-size array indexing, Python creates the list using list multiplication
 
 
 def primes_up_to(n: int) -> list[int]:
+    """Find all prime numbers up to n using the Sieve of Eratosthenes."""
     if n < 2:
         return []
+
     is_prime = [True] * (n + 1)
     is_prime[0] = is_prime[1] = False
 
     i = 2
-    while i * i < n:
+    while i * i <= n:
         if is_prime[i]:
             for k in range(i * i, n + 1, i):
                 is_prime[k] = False
