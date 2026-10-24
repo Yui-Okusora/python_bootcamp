@@ -1,5 +1,5 @@
-from collections import Counter, defaultdict
 import math
+from collections import Counter, defaultdict
 
 
 def calculate_p95(latencies: list[float]) -> float:
