@@ -2,6 +2,7 @@ from collections import Counter
 
 
 def word_count(text: str) -> dict[str, int]:
+    """Count the frequency of each word in a text after removing punctuation and lowercasing."""
     translator = str.maketrans("", "", ",.?!;:")
     cleaned_text = text.lower().translate(translator)
 
@@ -9,6 +10,7 @@ def word_count(text: str) -> dict[str, int]:
 
 
 def top_k(text: str, k: int) -> list[tuple[str, int]]:
+    """Return the top k most frequent words sorted by frequency descending and alphabetically ascending."""
     count = word_count(text)
 
     return sorted(count.items(), key=lambda x: (-x[1], x[0]))[:k]

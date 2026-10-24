@@ -7,6 +7,7 @@ from members.Koder4444.w2.models import Task
 
 
 def load_tasks(path: str) -> list[Task]:
+    """Load and parse tasks from a CSV file into a list of Task objects."""
     tasks = []
     with open(path, mode="r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -25,6 +26,7 @@ def load_tasks(path: str) -> list[Task]:
 
 
 def save_json(tasks: list[Task], path: str) -> None:
+    """Serialize a list of Task objects and save them to a JSON file."""
     data = []
     for task in tasks:
         task_dict = asdict(task)

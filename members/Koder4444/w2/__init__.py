@@ -6,9 +6,9 @@ __all__ = ["InfeasiblePlan", "Task", "check_feasible", "load_tasks", "save_json"
 
 
 def main() -> None:
+    """Load and display sample tasks from a CSV file located in the current directory."""
     import os
 
-    # Đường dẫn tới file CSV mẫu (giả sử bạn để file mẫu trong thư mục w2 hoặc gốc)
     csv_path = os.path.join(os.path.dirname(__file__), "tasks.csv")
     
     if os.path.exists(csv_path):
