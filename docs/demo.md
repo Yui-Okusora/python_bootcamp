@@ -4,7 +4,7 @@ This document illustrates how the Study Planner allocates tasks within a 8-hour 
 
 ## Execution Command
 ```bash
-$ python -m shared.study_planner samples/tasks.csv --hours 2
+$ python -m shared.study_planner samples/tasks.csv --hours 8
 
 ## Result
 Tonight (7.5 h):
