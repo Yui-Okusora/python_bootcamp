@@ -1,3 +1,4 @@
+#ruff: noqa: DTZ005 
 import argparse
 import sys
 from datetime import date, datetime
@@ -23,7 +24,7 @@ def main() -> None:
     parser.add_argument(
         "--today",
         type=lambda s: date.fromisoformat(s),
-        default=datetime.UTC,
+        default=datetime.now(),
         help="Ngày hiện tại YYYY-MM-DD (mặc định: hôm nay)",
     )
 
